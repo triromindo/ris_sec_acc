@@ -1,0 +1,41 @@
+<?php
+
+$isRun = true;
+/**
+ * PSEDUO DELETE
+ * 1. Hapus data
+ */
+if ($isRun) {
+
+    //  Table
+    $varUserID = $_REQUEST['id'];
+
+    $tmpQueryString = sprintf("
+            UPDATE `10sys_rec__user_id` 
+            SET `last_action` = 'DEL', 
+                `last_req_user` = '%s',
+                `last_req_timestamp` = NOW(), 
+                `last_app_user` = '%s',
+                `last_app_timestamp` = NOW(), 
+                `user_is_deleted` = 1
+            WHERE `user_id` = '%s' ;", 
+                $_SESSION['user']['id'],
+                $_SESSION['user']['id'],
+                $varUserID);
+    if ($varMySqli->query($tmpQueryString)) {
+        $data['status'] = true;
+    } else {
+        $data['status']  = false;
+        $data['err_msg'] = "Query error";
+        $isRun = false;
+    }
+}
+
+if ($isRun) {
+    funcSharedLog_WriteLog($varErrMessage, $varMySqli, $_SESSION['user']['id'], 'MOD-USER', 'DELETE', 
+            'Delete USER_ID = ' . $varUserID);
+}
+
+$varPAGE = 'JSON';
+$JSON = json_encode($data);
+?>
