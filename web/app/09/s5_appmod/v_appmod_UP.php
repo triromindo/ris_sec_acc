@@ -10,11 +10,11 @@
         <link rel="stylesheet" href="../../lib/w3/w3.css" />
         <link rel="stylesheet" href="../../lib/css/rom.css" />
         <link rel="stylesheet" href="../../lib/fa/css/all.css" />
-        <link rel="stylesheet" type="text/css" href="../../lib/dataTables/datatables.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../lib/datatables/datatables.min.css" />
 
         <script type="text/javascript" src="../../lib/jquery/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="../../lib/jquery-ui/jquery-ui.js"></script>
-        <script type="text/javascript" src="../../lib/dataTables/datatables.min.js"></script>
+        <script type="text/javascript" src="../../lib/datatables/datatables.min.js"></script>
     </head>
 
     <body class="w3-pale-red">
