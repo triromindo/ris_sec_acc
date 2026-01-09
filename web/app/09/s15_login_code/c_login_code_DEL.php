@@ -11,7 +11,7 @@ if ($isRun) {
     $varCodeID = $_REQUEST['id'];
 
     $tmpQueryString = sprintf("
-            DELETE FROM `80set_rec_login_code` 
+            DELETE FROM `05sec_rec__login_code` 
             WHERE `code_number` = '%s' ;", $varCodeID);
     if ($varMySqli->query($tmpQueryString)) {
         $data['status'] = true;

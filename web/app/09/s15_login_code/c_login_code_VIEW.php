@@ -12,7 +12,7 @@ if ($isRun) {
 
     $tmpQueryString = sprintf("
             SELECT `code_number`, `code_end`
-            FROM `80set_rec_login_code`
+            FROM `05sec_rec__login_code`
             WHERE `code_number` = '%s' ;", $varCodeID);
     if ($tmpResult = $varMySqli->query($tmpQueryString)) {
         if ($row = $tmpResult->fetch_assoc()) {

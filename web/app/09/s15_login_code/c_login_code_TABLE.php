@@ -9,7 +9,7 @@ if ($isRun) {
     //  Table
     $tmpQueryString = sprintf("
             SELECT `code_number`, `code_end`
-            FROM `80set_rec_login_code` 
+            FROM `05sec_rec__login_code` 
             ORDER BY `code_end` DESC ;");
     if ($tmpResult = $varMySqli->query($tmpQueryString)) {
         $PAGE['table_queue']['count'] = 0;

@@ -23,7 +23,7 @@ if ($isRun) {
     
 if ($isRun) {
     $tmpQueryString = sprintf("
-            UPDATE `80set_rec_login_code` 
+            UPDATE `05sec_rec__login_code` 
             SET `updated_at` = NOW(), 
                 `code_number` = '%s', 
                 `code_end` = '%s'

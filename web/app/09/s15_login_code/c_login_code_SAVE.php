@@ -24,7 +24,7 @@ if ($isRun) {
 
 if ($isRun) {
     $tmpQueryString = sprintf("
-            INSERT INTO `80set_rec_login_code` 
+            INSERT INTO `05sec_rec__login_code` 
                 (`rec_id`, `code_number`, `code_end`, 
                 `created_at`, `updated_at`) 
             VALUES 
