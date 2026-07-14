@@ -48,7 +48,7 @@ if ($isRun) {
                     $data['err_msg'] = "test";
                 } else {
                     $data['status'] = false;
-                    $data['err_msg'] = $arrChkBox;
+                    $data['err_msg'] = $tmpQueryString;
                     $isRun = false;
                 }
             }
