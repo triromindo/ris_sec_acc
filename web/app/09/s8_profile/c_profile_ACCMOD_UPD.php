@@ -11,6 +11,10 @@ if ($isRun) {
     //  Table
     $varProfileID = $_REQUEST['id'];
     $varAppID = $_REQUEST['app'];
+
+    var_dump($varProfileID);
+var_dump($varAppID);
+die();
 }
 
 if ($isRun) {
