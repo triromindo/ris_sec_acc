@@ -11,10 +11,6 @@ if ($isRun) {
     //  Table
     $varProfileID = $_REQUEST['id'];
     $varAppID = $_REQUEST['app'];
-
-    var_dump($varProfileID);
-var_dump($varAppID);
-die();
 }
 
 if ($isRun) {
@@ -22,12 +18,13 @@ if ($isRun) {
         DELETE FROM 15sys_rec__profile_appmod_list
         WHERE profile_id = '%s'
             AND app_id = '%s'; ",
-            $varProfileID,
-            $varAppID);
+        $varProfileID,
+        $varAppID
+    );
     if ($varMySqli->query($tmpQueryString)) {
         $data['status'] = true;
     } else {
-        $data['status']  = false;
+        $data['status'] = false;
         $data['err_msg'] = "Query error";
         $isRun = false;
     }
@@ -41,22 +38,39 @@ if ($isRun) {
                     (profile_id, app_id, appmod_id, access_level)
                 VALUES
                     ('%s', '%s', '%s', '%s'); ",
-                        $varProfileID, $varAppID, $key, $val);
+                    $varProfileID,
+                    $varAppID,
+                    $key,
+                    $val
+                );
+
+
+                var_dump($tmpQueryString);
+                die();
+
                 if ($varMySqli->query($tmpQueryString)) {
                     $data['status'] = true;
                 } else {
-                    $data['status']  = false;
+                    $data['status'] = false;
                     $data['err_msg'] = "Query error";
                     $isRun = false;
                 }
             }
         }
     }
+
+
 }
 
 if ($isRun) {
-    funcSharedLog_WriteLog($varErrMessage, $varMySqli, $_SESSION['user']['id'], 'MOD-PROFILE', 'EDIT',
-            'Update Module PROFILE_ID = ' . $varProfileID);
+    funcSharedLog_WriteLog(
+        $varErrMessage,
+        $varMySqli,
+        $_SESSION['user']['id'],
+        'MOD-PROFILE',
+        'EDIT',
+        'Update Module PROFILE_ID = ' . $varProfileID
+    );
 }
 
 
