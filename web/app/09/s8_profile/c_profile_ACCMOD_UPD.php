@@ -14,6 +14,18 @@ if ($isRun) {
 }
 
 if ($isRun) {
+
+    
+
+
+                var_dump("test");
+                die();
+
+}
+
+
+
+if ($isRun) {
     $tmpQueryString = sprintf("
         DELETE FROM 15sys_rec__profile_appmod_list
         WHERE profile_id = '%s'
@@ -43,11 +55,6 @@ if ($isRun) {
                     $key,
                     $val
                 );
-
-
-                var_dump($tmpQueryString);
-                die();
-
                 if ($varMySqli->query($tmpQueryString)) {
                     $data['status'] = true;
                 } else {
