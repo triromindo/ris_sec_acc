@@ -13,11 +13,12 @@ if ($isRun) {
     $tmpQueryString = sprintf("
         DELETE FROM 15sys_rec__profile_app_list
         WHERE profile_id = '%s'; ",
-            $varProfileID);
+        $varProfileID
+    );
     if ($varMySqli->query($tmpQueryString)) {
         $data['status'] = true;
     } else {
-        $data['status']  = false;
+        $data['status'] = false;
         $data['err_msg'] = "Query error";
         $isRun = false;
     }
@@ -34,22 +35,31 @@ if ($isRun) {
                 (`rec_id`, `profile_id`, `app_id`) 
             VALUES 
                 (NULL, '%s', '%s'); ",
-                    $varProfileID,
-                    $value);
+                $varProfileID,
+                $value
+            );
             if ($varMySqli->query($tmpQueryString)) {
                 $data['status'] = true;
             } else {
-                $data['status']  = false;
+                $data['status'] = false;
                 $data['err_msg'] = "Query error";
                 $isRun = false;
             }
         }
+        var_dump($data);
+        die();
     }
 }
 
 if ($isRun) {
-    funcSharedLog_WriteLog($varErrMessage, $varMySqli, $_SESSION['user']['id'], 'MOD-PROFILE', 'EDIT',
-            'Update Aplikasi PROFILE_ID = ' . $varProfileID);
+    funcSharedLog_WriteLog(
+        $varErrMessage,
+        $varMySqli,
+        $_SESSION['user']['id'],
+        'MOD-PROFILE',
+        'EDIT',
+        'Update Aplikasi PROFILE_ID = ' . $varProfileID
+    );
 }
 
 $varPAGE = 'JSON';
