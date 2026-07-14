@@ -38,7 +38,6 @@ if ($isRun) {
                 VALUES
                     ('%s', '%s', '%s', '%s'); ",
                         $varProfileID, $varAppID, $key, $val);
-                        echo $tmpQueryString;
                 if ($varMySqli->query($tmpQueryString)) {
                     $data['status'] = true;
                 } else {
